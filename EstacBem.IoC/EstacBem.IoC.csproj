@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EstacBem.Application\EstacBem.Application.csproj" />
+    <ProjectReference Include="..\EstacBem.Domain\EstacBem.Domain.csproj" />
+    <ProjectReference Include="..\EstacBem.Infra\EstacBem.Infra.csproj" />
+  </ItemGroup>
+
+</Project>

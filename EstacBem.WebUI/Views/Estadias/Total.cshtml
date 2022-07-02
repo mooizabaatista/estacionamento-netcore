@@ -1,0 +1,79 @@
+﻿@using EstacBem.WebUI.Extensions
+@model EstacBem.WebUI.Models.EstadiaViewModel
+
+<input id="estadiaId" type="hidden" value="@Model.Id" idKey="@Model.Id" />
+
+<div class="container">
+    <!-- Header -->
+    <div class="row">
+        <div class="col-12 text-center mt-5">
+            <h3 class="font-weight-lighter">Resumo de pagamento</h3>
+        </div>
+    </div>
+    <hr />
+
+    <div class="row">
+        <div class="col-12" style="font-family: 'Courier New'; letter-spacing: 1px;">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h5>Extrato de serviços</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <ul>
+                                <li class="list-group">Data..........: @Model.Data.PtBR_ddMMYYYY()</li>
+                                <li class="list-group">Placa.........: @Model.Veiculo.Placa</li>
+                                <li class="list-group">Entrada.......: @Model.Entrada.PtBR_ddMMYYYY_HHmm()</li>
+                                <li class="list-group">Saida.........: @Model.Saida.PtBR_ddMMYYYY_HHmm()</li>
+                                <li class="list-group">Tempo Total...: @Model.TempoTotal</li>
+                                @if (Model.ValorTotal == null)
+                                {
+                                    <li class="list-group">Valor Total...: R$: 00.00</li>
+                                }
+                                else
+                                {
+                                    <li class="list-group">Valor Total...: @Model.ValorTotal</li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+
+        <div class="col-12">
+            <form id="frmPostEstadia" asp-action="Finalizar" method="post">
+                <input type="hidden" value="@Model.Id" id="estadiaId" name="estadiaId" />
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-4 mt-3">
+                            <label>Status Pagamento</label>
+                            <div class="row">
+                                <div class="col-8">
+                                    <select class="form-control" asp-for="StatusId" id="statusId" asp-items="@ViewBag.Status">
+                                        <option value="Pendente">Pendente</option>
+                                    </select>
+                                </div>
+                                <div class="col-4">
+                                    <button type="submit" class="btn btn-success">Finalizar</button>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-4">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="~/js/Estadia/JsEstadiaFinalizar.js"></script>
+}

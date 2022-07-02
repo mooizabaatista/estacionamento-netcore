@@ -1,0 +1,47 @@
+﻿@model EstacBem.Domain.Entities.Bolsao
+
+<div class="container">
+    <!-- Header -->
+    <div class="row">
+        <div class="col-12 text-center mt-5">
+            <h3 class="font-weight-lighter">Exclusão de Bolsões</h3>
+            <hr />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <!-- Informações sobre o bolsão que será removido -->
+            <table class="table table-sm table-hover text-center mt-3">
+                <thead class="bg-dark text-light">
+                    <tr>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Quantidade de vagas</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td scope="row">@Model.Nome</td>
+                        <td scope="row">@Model.QtdVagas</td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- Formulário de remoção -->
+    <div class="row">
+        <div class="col-3 mt-3">
+            <!-- Ações -->
+            <form asp-action="RemovePost" asp-controller="Bolsoes" method="post">
+                <!-- Id hidden -->
+                <input type="hidden" asp-for="@Model.Id" />
+                <!-- Remover -->
+                <button type="submit" value="Remover" class="btn btn-sm btn-danger">
+                    Remover <i class="fa fa-trash" aria-hidden="true"></i>
+                </button>
+                <!-- Cancelar -->
+                <a asp-action="Index" asp-controller="Bolsoes" class="btn btn-sm btn-dark">Cancelar <i class="fa fa-arrow-left ml-1" aria-hidden="true"></i></a>
+            </form>
+        </div>
+    </div>
+</div>

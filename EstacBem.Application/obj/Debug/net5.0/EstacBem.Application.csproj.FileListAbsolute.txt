@@ -1,0 +1,15 @@
+C:\Users\batis\OneDrive\Área de Trabalho\EstacBemProject\EstacBem\EstacBem.Application\bin\Debug\net5.0\EstacBem.Application.deps.json
+C:\Users\batis\OneDrive\Área de Trabalho\EstacBemProject\EstacBem\EstacBem.Application\bin\Debug\net5.0\EstacBem.Application.dll
+C:\Users\batis\OneDrive\Área de Trabalho\EstacBemProject\EstacBem\EstacBem.Application\bin\Debug\net5.0\EstacBem.Application.pdb
+C:\Users\batis\OneDrive\Área de Trabalho\EstacBemProject\EstacBem\EstacBem.Application\bin\Debug\net5.0\EstacBem.Domain.dll
+C:\Users\batis\OneDrive\Área de Trabalho\EstacBemProject\EstacBem\EstacBem.Application\bin\Debug\net5.0\EstacBem.Domain.pdb
+C:\Users\batis\OneDrive\Área de Trabalho\EstacBemProject\EstacBem\EstacBem.Application\obj\Debug\net5.0\EstacBem.Application.csproj.AssemblyReference.cache
+C:\Users\batis\OneDrive\Área de Trabalho\EstacBemProject\EstacBem\EstacBem.Application\obj\Debug\net5.0\EstacBem.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\batis\OneDrive\Área de Trabalho\EstacBemProject\EstacBem\EstacBem.Application\obj\Debug\net5.0\EstacBem.Application.AssemblyInfoInputs.cache
+C:\Users\batis\OneDrive\Área de Trabalho\EstacBemProject\EstacBem\EstacBem.Application\obj\Debug\net5.0\EstacBem.Application.AssemblyInfo.cs
+C:\Users\batis\OneDrive\Área de Trabalho\EstacBemProject\EstacBem\EstacBem.Application\obj\Debug\net5.0\EstacBem.Application.csproj.CoreCompileInputs.cache
+C:\Users\batis\OneDrive\Área de Trabalho\EstacBemProject\EstacBem\EstacBem.Application\obj\Debug\net5.0\EstacBem.Application.csproj.CopyComplete
+C:\Users\batis\OneDrive\Área de Trabalho\EstacBemProject\EstacBem\EstacBem.Application\obj\Debug\net5.0\EstacBem.Application.dll
+C:\Users\batis\OneDrive\Área de Trabalho\EstacBemProject\EstacBem\EstacBem.Application\obj\Debug\net5.0\refint\EstacBem.Application.dll
+C:\Users\batis\OneDrive\Área de Trabalho\EstacBemProject\EstacBem\EstacBem.Application\obj\Debug\net5.0\EstacBem.Application.pdb
+C:\Users\batis\OneDrive\Área de Trabalho\EstacBemProject\EstacBem\EstacBem.Application\obj\Debug\net5.0\ref\EstacBem.Application.dll

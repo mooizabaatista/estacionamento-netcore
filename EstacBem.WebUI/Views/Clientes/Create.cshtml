@@ -1,0 +1,57 @@
+﻿@model EstacBem.Domain.Entities.Cliente
+
+<div class="container">
+    <div class="row">
+        <!-- Coluna Auxiliar -->
+        <div class="col-3"></div>
+        <!-- Heder -->
+        <div class="col-6 mt-5">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Adicionar Cliente</h5>
+                </div>
+                <!-- Formulário de cadastro -->
+                <div class="card-body">
+                    <form asp-action="Create" method="post" id="frmPostCliente">
+                        <!-- Nome -->
+                        <div class="form-group">
+                            <label>Nome</label>
+                            <input asp-for="Nome" class="form-control" />
+                        </div>
+                        <!-- Sobrenome -->
+                        <div class="form-group">
+                            <label>Sobrenome</label>
+                            <input asp-for="SobreNome" class="form-control" />
+                        </div>
+                        <!-- CPF -->
+                        <div class="form-group">
+                            <label>CPF</label>
+                            <input asp-for="CPF" class="form-control" />
+                        </div>
+                        <!-- Açõess -->
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-6">
+                                    <!-- Cadastrar -->
+                                    <button id="btSubmit" class="btn btn-sm btn-success form-control">
+                                        Cadastrar <i class="fa fa-plus ml-2" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                                <!-- Cancelar -->
+                                <div class="col-6">
+                                    <a asp-action="Index" asp-controller="Clientes" class="btn btn-sm btn-dark form-control">Cancelar <i class="fa fa-arrow-left ml-2" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Coluna Auxiliar -->
+        <div class="col-4"></div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/Cliente/JSClienteCreate.js"></script>
+}

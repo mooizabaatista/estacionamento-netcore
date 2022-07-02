@@ -1,0 +1,56 @@
+﻿@model EstacBem.Domain.Entities.Veiculo
+
+<div class="container">
+    <!-- Header -->
+    <div class="row">
+        <div class="col-12 text-center mt-5">
+            <h3 class="font-weight-lighter">Exclusão de Veículos</h3>
+            <hr />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <!-- Informações sobre o veóculo que será removido -->
+            <table class="table table-sm table-hover text-center mt-3">
+                <thead class="bg-dark text-light">
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Placa</</th>
+                        <th scope="col">Marca</</th>
+                        <th scope="col">Modelo</th>
+                        <th scope="col">Cor</th>
+                        <th scope="col">Cliente</th>
+                        <th scope="col">CPF</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">@Model.Id</th>
+                        <td>@Model.Placa</td>
+                        <td>@Model.Marca</td>
+                        <td>@Model.Modelo</td>
+                        <td>@Model.Cor</td>
+                        <td>@Model.Cliente.Nome</td>
+                        <td>@Model.Cliente.CPF</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- Formulário de remoção -->
+    <div class="row">
+        <div class="col-3 mt-3">
+            <!-- Ações -->
+            <form asp-action="RemovePost" asp-controller="Veiculos" method="post">
+                <!-- Id hidden -->
+                <input type="hidden" asp-for="@Model.Id" />
+                <!-- Remover -->
+                <button type="submit" value="Remover" class="btn btn-sm btn-danger">
+                    Remover <i class="fa fa-trash" aria-hidden="true"></i>
+                </button>
+                <!-- Cancelar -->
+                <a asp-action="Index" asp-controller="Veiculos" class="btn btn-sm btn-dark">Cancelar <i class="fa fa-arrow-left ml-1" aria-hidden="true"></i></a>
+            </form>
+        </div>
+    </div>
+</div>

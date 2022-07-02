@@ -1,0 +1,103 @@
+﻿    @using EstacBem.WebUI.Extensions
+@model IEnumerable<EstacBem.WebUI.Models.EstadiaViewModel>
+
+
+<div class="container">
+    <!-- Header -->
+    <div class="row">
+        <div class="col-12 text-center mt-5">
+            <h3 class="font-weight-lighter">Gestão de Estadias</h3>
+        </div>
+    </div>
+    <hr />
+    <!-- Tabela com as estadias -->
+    <div class="row">
+        <div class="col-3 mb-2">
+            <input type="text" class="form-control" id="txtFiltro" placeholder="Procurar..." />
+        </div>
+        <table class="table table-sm table-hover text-center">
+            <thead class="bg-dark text-light">
+                <tr>
+                    <th scope="col">Placa</</th>
+                    <th scope="col">Entrada</</th>
+                    <th scope="col">Saída</</th>
+                    <th scope="col">Área</</th>
+                    <th scope="col">Tempo total</</th>
+                    <th scope="col">Primeira hora</</th>
+                    <th scope="col">Demais horas</</th>
+                    <th scope="col">Valor total</</th>
+                    <th scope="col">Pagamento</</th>
+                    <th scope="col">Ações</</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    string saidaStatus = item.Saida == null ? "aberta" : "fechada";
+
+                    <tr class="filtrohide" filtro="@item.Veiculo.Placa.ToLower().Replace("-", string.Empty)|@saidaStatus">
+                        <td>@item.Veiculo.Placa</td>
+                        <td>@item.Entrada.PtBR_ddMMYYYY_HHmm()</td>
+                        @if (@item.Saida == null)
+                        {
+                            <td>estadia aberta</td>
+                        }
+                        else
+                        {
+                            <td>@item.Saida</td>
+                        }
+
+                        <td>@item.Bolsao.Nome</td>
+                        @if (@item.Saida == null)
+                        {
+                            <td></td>
+                        }
+                        else
+                        {
+                            <td>@item.TempoTotal</td>
+                        }
+                        <td>@item.ValorPrimeira</td>
+                        <td>@item.ValorDemais</td>
+                        @if (@item.Saida == null)
+                        {
+                            <td></td>
+                        }
+                        else
+                        {
+                            <td>@item.ValorTotal</td>
+                        }
+                        <td>@item.Status.Nome</td>
+                        <td>
+                            <span>
+                                <!-- Editar -->
+                                <a asp-action="Edit" asp-controller="Estadias" asp-route-id="@item.Id" class="btn btn-sm btn-dark">
+                                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                                </a>
+                                <!-- Remover -->
+                                <a asp-action="Remove" asp-controller="Estadias" asp-route-id="@item.Id" class="btn btn-sm btn-danger">
+                                    <i class="fa fa-trash" aria-hidden="true"></i>
+                                </a>
+                                @if (item.Saida == null)
+                                {
+                                    <span id="fecharEstadia"  idkey="@item.Id" class="btn btn-sm btn-danger">
+                                        <i class="fas fa-sack-dollar"></i>
+                                    </span>
+                                }
+                                else
+                                {
+                                    <span class="btn btn-sm btn-success">
+                                        <i class="fas fa-badge-check"></i>
+                                    </span>
+                                }
+                            </span>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section scripts{
+    <script src="~/js/Estadia/jsEstadiaIndex.js"></script>
+}

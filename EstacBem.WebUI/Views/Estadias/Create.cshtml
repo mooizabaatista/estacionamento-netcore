@@ -1,0 +1,124 @@
+﻿@using EstacBem.WebUI.Extensions
+@model EstacBem.Domain.Entities.Estadia
+
+<div class="container">
+    <div class="row">
+        <!-- Heder -->
+        <div class="col-12 mt-4">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Adicionar Estadia</h5>
+                </div>
+                <!-- Formulário de cadastro -->
+                <div class="card-body">
+                        <form id="frmPostEstadia" asp-action="CreatePost" method="post">
+
+                            <!-- Data hidden -->
+                            <input type="hidden" asp-for="Data" value="@DateTime.Now" />
+
+                            <!-- Veículo Id Hidden-->
+                            <input type="hidden" asp-for="VeiculoId" />
+
+                            <div class="row">
+                                <div class="col-3">
+                                    <!-- Placa -->
+                                    <div class="form-group">
+                                        <label>Placa</label>
+                                        <input id="veiculo_Placa" value="@ViewBag.Veiculo.Placa" class="form-control text-center" />
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <!-- Hora Entrada -->
+                                    <div class="form-group">
+                                        <label>Entrada</label>
+                                        <input asp-for="Entrada" value="@DateTime.Now.ToShortDateString()" type="hidden" />
+                                        <input value="@DateTime.Now.ToLocalTime()" class="form-control text-center" />
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <!-- Valor primeira hora -->
+                                    <div class="form-group">
+                                        <label>Primera hora</label>
+                                        <input asp-for="ValorPrimeira" class="form-control text-center" />
+                                    </div>
+                                </div>
+                                <!-- Valor demais horas -->
+                                <div class="form-group">
+                                    <label>demais horas</label>
+                                    <input asp-for="ValorDemais" class="form-control text-center" />
+                                </div>
+                                <div class="col-3">
+                                    <!-- Marca -->
+                                    <div class="form-group">
+                                        <label>Marca</label>
+                                        <input class="form-control text-center" value="@ViewBag.Veiculo.Marca" />
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <!-- Modelo -->
+                                    <div class="form-group">
+                                        <label>Modelo</label>
+                                        <input class="form-control text-center" value="@ViewBag.Veiculo.Modelo" />
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    <!-- Cor -->
+                                    <div class="form-group">
+                                        <label>Cor</label>
+                                        <input class="form-control text-center" value="@ViewBag.Veiculo.Cor" />
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <!-- Cliente Nome-->
+                                    <div class="form-group">
+                                        <label>Cliente</label>
+                                        <input class="form-control text-center" value="@ViewBag.Veiculo.Cliente.Nome" />
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <!-- Bolsao -->
+                                    <div class="form-group">
+                                        <label>Área</label>
+                                        <select class="form-control" asp-items="ViewBag.Bolsoes" asp-for="BolsaoId">
+                                            <option value="">Selecione uma área...</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <!-- Status -->
+                                    <div class="form-group">
+                                        <label>Status Pagamento</label>
+                                        <select class="form-control" asp-for="StatusId" id="statusId" asp-items="ViewBag.Status">
+                                            <option value="">Selecione uma opção...</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Açõess -->
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <!-- Cadastrar -->
+                                        <button id="btSubmit" class="btn btn-sm btn-success form-control" type="submit">
+                                            Confirmar <i class="fa fa-plus ml-2" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+                                    <!-- Cancelar -->
+                                    <div class="col-6">
+                                        <a asp-action="Index" asp-controller="Estadias" class="btn btn-sm btn-dark form-control">Cancelar <i class="fa fa-arrow-left ml-2" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                </div>
+            </div>
+        </div>
+        <!-- Coluna Auxiliar -->
+        <div class="col-4"></div>
+    </div>
+</div>
+
+@section Scripts{
+        <script src="~/js/Estadia/JsEstadiaCreate.js"></script>
+}

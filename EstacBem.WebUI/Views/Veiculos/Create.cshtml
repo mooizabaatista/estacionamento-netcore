@@ -1,0 +1,82 @@
+﻿@model EstacBem.Domain.Entities.Veiculo
+
+<div class="container">
+    <div class="row">
+        <!-- Coluna Auxiliar -->
+        <div class="col-3"></div>
+        <!-- Heder -->
+        <div class="col-6 mt-5">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Adicionar Veículo</h5>
+                </div>
+                <!-- Formulário de cadastro -->
+                <div class="card-body">
+                    <form asp-action="Create" asp-controller="Veiculos" method="post" id="frmPostVeiculo">
+                        <div class="row">
+                            <div class="col-3">
+                                <!-- Placa -->
+                                <div class="form-group">
+                                    <label>Placa</label>
+                                    <input asp-for="Placa" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <!-- Marca -->
+                                <div class="form-group">
+                                    <label>Marca</label>
+                                    <input asp-for="Marca" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="col-5">
+                                <!-- Modelo -->
+                                <div class="form-group">
+                                    <label>Modelo</label>
+                                    <input asp-for="Modelo" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="col-5">
+                                <!-- Cor -->
+                                <div class="form-group">
+                                    <label>Cor</label>
+                                    <input asp-for="Cor" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="col-7">
+                                <!-- Cliente -->
+                                <div class="form-group">
+                                    <label>Cliente</label>
+                                    <select asp-for="ClienteId" class="form-control my-select" asp-items="ViewBag.Clientes" data-live-search="true">
+                                        <option value="">Selecione um cliente</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Açõess -->
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-6">
+                                    <!-- Cadastrar -->
+                                    <button class="btn btn-sm btn-success form-control" type="submit" id="btSubmit">
+                                        Cadastrar <i class="fa fa-plus ml-2" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                                <!-- Cancelar -->
+                                <div class="col-6">
+                                    <a asp-action="Index" asp-controller="Veiculos" class="btn btn-sm btn-dark form-control">Cancelar <i class="fa fa-arrow-left ml-2" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Coluna Auxiliar -->
+        <div class="col-4"></div>
+    </div>
+</div>
+
+@section Scripts {
+        <script src="~/js/Veiculo/JsVeiculoCreate.js"></script>
+}

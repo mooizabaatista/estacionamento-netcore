@@ -1,0 +1,126 @@
+﻿@using EstacBem.WebUI.Extensions
+@model IEnumerable<EstacBem.Domain.Entities.Bolsao>
+
+@{
+    ViewData["Title"] = "Página Principal";
+}
+
+<!-- Contagem das vagas disponíveis em cada bolsão -->
+<div class="row">
+    <div class="col-12 d-flex justify-content-around mt-3" style="font-size:0.9rem;">
+        @foreach (var item in ViewBag.Bolsoes)
+        {
+            // Se a quantidade de vagas for igual a zero
+            if (item.QtdVagas == 0)
+            {
+                <strong>@item.Nome - <span class="badge badge-danger">LOTADO</span></strong>
+            }
+            // Se o bolsão for preferencial irá ficar azul
+            else if (item.Nome.ToLower().Contains("preferencial"))
+            {
+                <strong>@item.Nome - <span class="badge badge-primary">@item.QtdVagas vagas</span></strong>
+            }
+            // Padrão
+            else
+            {
+                <strong>@item.Nome - <span class="badge badge-dark">@item.QtdVagas vagas</span></strong>
+            }
+        }
+    </div>
+</div>
+<!-- Divisão -->
+<hr style="width:100%;" class="mb-4" />
+
+<!-- Header -->
+<div class="row">
+    <div class="col-12 text-center mt-3">
+        <img class="shadow-lg" src="~/images/logo.png" alt="" width="420" height="200" />
+    </div>
+</div>
+
+
+<div class="row">
+    <!-- Botão modal cadastrar estadia -->
+    <div class="col-12 text-center mt-5">
+        <button type="button" class="btn btn-md btn-dark" data-toggle="modal" data-target="#frmModalCadastroEstadia">
+            Cadastrar Estadia <i class="fas fa-plus ml-2"></i>
+        </button>
+    </div>
+</div>
+
+<!-- Modal cadastrar estadia -->
+<div class="modal fade" id="frmModalCadastroEstadia" tabindex="-1" role="dialog" aria-labelledby="estadiaModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <!-- Modal header -->
+            <div class="modal-header">
+                <h5 class="modal-title" id="estadiaModalLabel">Cadastro de estadia </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <!-- Formulário preenchimento da placa -->
+            <div class="modal-body">
+                <form asp-action="Create" asp-controller="Estadias" method="get" id="frmCadastroEstadia">
+                    <div class="row">
+                        <div class="col-1"></div>
+                        <div class="col-10">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Digite a placa do veículo..." name="placa" id="placa" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <!-- Cancelar -->
+                        <button class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <!-- Cadastrar -->
+                        <button type="submit" class="btn btn-primary" id="btSubmit">Cadastrar</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Modal resumir estadia -->
+<div class="modal fade" id="frmModalResumoEstadia" tabindex="-1" role="dialog" aria-labelledby="estadiaModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <!-- Modal header -->
+            <div class="modal-header">
+                <h5 class="modal-title" id="estadiaModalLabel">Resumo de estadia </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <!-- Formulário preenchimento da placa -->
+            <div class="modal-body">
+                <form asp-action="FecharEstadia" asp-controller="Estadias" method="post" id="frmResumoEstadia">
+                    <div class="row">
+                        <div class="col-1"></div>
+                        <div class="col-10">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Digite a placa do veículo..." name="placaResumo" id="placaResumo" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <!-- Cancelar -->
+                        <button class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <!-- Cadastrar -->
+                        <button type="submit" class="btn btn-primary" id="btSubmitResumo">Confirmar</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="js/Home/JsCreateEstadiaHome.js"></script>
+    <script src="js/Home/JsResumoEstadia.js"></script>
+}

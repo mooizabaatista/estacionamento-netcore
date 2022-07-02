@@ -1,0 +1,12 @@
+C:\Users\batis\OneDrive\Área de Trabalho\EstacBemProject\EstacBem\EstacBem.Domain\bin\Debug\net5.0\EstacBem.Domain.deps.json
+C:\Users\batis\OneDrive\Área de Trabalho\EstacBemProject\EstacBem\EstacBem.Domain\bin\Debug\net5.0\EstacBem.Domain.dll
+C:\Users\batis\OneDrive\Área de Trabalho\EstacBemProject\EstacBem\EstacBem.Domain\bin\Debug\net5.0\EstacBem.Domain.pdb
+C:\Users\batis\OneDrive\Área de Trabalho\EstacBemProject\EstacBem\EstacBem.Domain\obj\Debug\net5.0\EstacBem.Domain.csproj.AssemblyReference.cache
+C:\Users\batis\OneDrive\Área de Trabalho\EstacBemProject\EstacBem\EstacBem.Domain\obj\Debug\net5.0\EstacBem.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\batis\OneDrive\Área de Trabalho\EstacBemProject\EstacBem\EstacBem.Domain\obj\Debug\net5.0\EstacBem.Domain.AssemblyInfoInputs.cache
+C:\Users\batis\OneDrive\Área de Trabalho\EstacBemProject\EstacBem\EstacBem.Domain\obj\Debug\net5.0\EstacBem.Domain.AssemblyInfo.cs
+C:\Users\batis\OneDrive\Área de Trabalho\EstacBemProject\EstacBem\EstacBem.Domain\obj\Debug\net5.0\EstacBem.Domain.csproj.CoreCompileInputs.cache
+C:\Users\batis\OneDrive\Área de Trabalho\EstacBemProject\EstacBem\EstacBem.Domain\obj\Debug\net5.0\EstacBem.Domain.dll
+C:\Users\batis\OneDrive\Área de Trabalho\EstacBemProject\EstacBem\EstacBem.Domain\obj\Debug\net5.0\refint\EstacBem.Domain.dll
+C:\Users\batis\OneDrive\Área de Trabalho\EstacBemProject\EstacBem\EstacBem.Domain\obj\Debug\net5.0\EstacBem.Domain.pdb
+C:\Users\batis\OneDrive\Área de Trabalho\EstacBemProject\EstacBem\EstacBem.Domain\obj\Debug\net5.0\ref\EstacBem.Domain.dll

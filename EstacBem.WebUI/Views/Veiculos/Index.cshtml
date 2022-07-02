@@ -1,0 +1,60 @@
+﻿@model IEnumerable<EstacBem.Domain.Entities.Veiculo>
+
+
+<div class="container">
+    <!-- Header -->
+    <div class="row">
+        <div class="col-12 text-center mt-5">
+            <h3 class="font-weight-lighter">Gestão de Veículos</h3>
+            <hr />
+        </div>
+    </div>
+    <!-- Link para criar novo veículo -->
+    <div class="col-2">
+        <a class="btn btn-sm btn-dark d-flex justify-content-center align-items-md-center mb-3 p-2"  asp-action="Create" asp-controller="Veiculos">
+            Cadastrar <i class="fa fa-plus ml-2" aria-hidden="true"></i>
+        </a>
+    </div>
+
+    <!-- Tabela com os veículos -->
+    <div class="row">
+        <table class="table table-sm table-hover text-center">
+            <thead class="bg-dark text-light">
+                <tr>
+                    <th scope="col">Placa</</th>
+                    <th scope="col">Marca</</th>
+                    <th scope="col">Modelo</th>
+                    <th scope="col">Cor</th>
+                    <th scope="col">Cliente</th>
+                    <th scope="col">CPF</th>
+                    <th scope="col">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td scope="row">@item.Placa</td>
+                        <td>@item.Marca</td>
+                        <td>@item.Modelo</td>
+                        <td>@item.Cor</td>
+                        <td>@item.Cliente.Nome @item.Cliente.SobreNome</td>
+                        <td>@item.Cliente.CPF</td>
+                        <td>
+                            <span>
+                                 <!-- Editar -->
+                                <a asp-action="Edit" asp-controller="Veiculos" asp-route-id="@item.Id" class="btn btn-sm btn-dark">
+                                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                                </a>
+                                 <!-- Remover -->
+                                <a asp-action="Remove" asp-controller="Veiculos" asp-route-id="@item.Id" class="btn btn-sm btn-danger">
+                                    <i class="fa fa-trash" aria-hidden="true"></i>
+                                </a>
+                            </span>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

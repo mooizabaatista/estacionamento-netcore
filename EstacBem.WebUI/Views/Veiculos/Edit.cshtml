@@ -1,0 +1,76 @@
+﻿@model EstacBem.Domain.Entities.Veiculo
+
+<div class="container">
+    <div class="row">
+        <!-- Coluna Auxiliar -->
+        <div class="col-3"></div>
+        <!-- Heder -->
+        <div class="col-6 mt-5">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Editar Veículo</h5>
+                </div>
+                <!-- Formulário de edição -->
+                <div class="card-body">
+                    <form asp-action="Edit" asp-controller="Veiculos" method="post">
+                        <div class="row">
+                            <div class="col-3">
+                                <!-- Placa -->
+                                <div class="form-group">
+                                    <label>Placa</label>
+                                    <input asp-for="Placa" class="form-control" value="@Model.Placa" />
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <!-- Marca -->
+                                <div class="form-group">
+                                    <label>Marca</label>
+                                    <input asp-for="Marca" class="form-control" value="@Model.Marca"/>
+                                </div>
+                            </div>
+                            <div class="col-5">
+                                <!-- Modelo -->
+                                <div class="form-group">
+                                    <label>Modelo</label>
+                                    <input asp-for="Modelo" class="form-control" value="@Model.Modelo"/>
+                                </div>
+                            </div>
+                            <div class="col-5">
+                                <!-- Cor -->
+                                <div class="form-group">
+                                    <label>Cor</label>
+                                    <input asp-for="Cor" class="form-control" value="@Model.Cor"/>
+                                </div>
+                            </div>
+                            <div class="col-7">
+                                <!-- Cliente -->
+                                <div class="form-group">
+                                    <label>Cliente</label>
+                                    <select asp-for="ClienteId" class="form-control" asp-items="ViewBag.Clientes"></select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Açõess -->
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-6">
+                                    <!-- Editar -->
+                                    <button class="btn btn-sm btn-success form-control" asp-action="Edit" asp-controller="Veiculos">
+                                        Editar <i class="fa fa-pencil ml-2" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                                <!-- Cancelar -->
+                                <div class="col-6">
+                                    <a asp-action="Index" asp-controller="Veiculos" class="btn btn-sm btn-dark form-control">Cancelar <i class="fa fa-arrow-left ml-2" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Coluna Auxiliar -->
+        <div class="col-4"></div>
+    </div>
+</div>

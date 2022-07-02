@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "EstacBem.Application/1.0.0": {
+        "dependencies": {
+          "EstacBem.Domain": "1.0.0"
+        },
+        "runtime": {
+          "EstacBem.Application.dll": {}
+        }
+      },
+      "EstacBem.Domain/1.0.0": {
+        "runtime": {
+          "EstacBem.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "EstacBem.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "EstacBem.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

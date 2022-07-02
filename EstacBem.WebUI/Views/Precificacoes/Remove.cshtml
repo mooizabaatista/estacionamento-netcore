@@ -1,0 +1,52 @@
+﻿@model EstacBem.Domain.Entities.Precificacao
+
+<div class="container">
+    <!-- Header -->
+    <div class="row">
+        <div class="col-12 text-center mt-5">
+            <h3 class="font-weight-lighter">Exclusão de Precificações</h3>
+            <hr />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <!-- Informações sobre a precificação que será removida -->
+            <table class="table table-sm table-hover text-center mt-3">
+                <thead class="bg-dark text-light">
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Data</</th>
+                        <th scope="col">Valor primeira hora</</th>
+                        <th scope="col">Valor demais horas</th>
+                        <th scope="col">Observação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">@Model.Id</th>
+                        <td>@Model.DataHora</td>
+                        <td>@Model.ValorPrimeira</td>
+                        <td>@Model.ValorDemais</td>
+                        <td>@Model.Observacao</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- Formulário de remoção -->
+    <div class="row">
+        <div class="col-3 mt-3">
+            <!-- Ações -->
+            <form asp-action="RemovePost" asp-controller="Precificacoes" method="post">
+                <!-- Id hidden -->
+                <input type="hidden" asp-for="@Model.Id" />
+                <!-- Remover -->
+                <button type="submit" value="Remover" class="btn btn-sm btn-danger">
+                    Remover <i class="fa fa-trash" aria-hidden="true"></i>
+                </button>
+                <!-- Cancelar -->
+                <a asp-action="Index" asp-controller="Precificacoes" class="btn btn-sm btn-dark">Cancelar <i class="fa fa-arrow-left ml-1" aria-hidden="true"></i></a>
+            </form>
+        </div>
+    </div>
+</div>
