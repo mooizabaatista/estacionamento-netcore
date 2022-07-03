@@ -1,4 +1,4 @@
-﻿    @using EstacBem.WebUI.Extensions
+﻿@using EstacBem.WebUI.Extensions
 @model IEnumerable<EstacBem.WebUI.Models.EstadiaViewModel>
 
 
@@ -47,7 +47,16 @@
                             <td>@item.Saida</td>
                         }
 
-                        <td>@item.Bolsao.Nome</td>
+
+                        @if (item.NomeAntigoBolsao != null)
+                        {
+                            <td>@item.NomeAntigoBolsao</td>
+                        }
+                        else
+                        {
+                            <td>@item.Bolsao.Nome</td>
+                        }
+
                         @if (@item.Saida == null)
                         {
                             <td></td>
@@ -68,18 +77,22 @@
                         }
                         <td>@item.Status.Nome</td>
                         <td>
-                            <span>
+
+                            @if (saidaStatus == "aberta")
+                            {
                                 <!-- Editar -->
                                 <a asp-action="Edit" asp-controller="Estadias" asp-route-id="@item.Id" class="btn btn-sm btn-dark">
                                     <i class="fa fa-pencil" aria-hidden="true"></i>
                                 </a>
+                            }
+                            <span>
                                 <!-- Remover -->
                                 <a asp-action="Remove" asp-controller="Estadias" asp-route-id="@item.Id" class="btn btn-sm btn-danger">
                                     <i class="fa fa-trash" aria-hidden="true"></i>
                                 </a>
                                 @if (item.Saida == null)
                                 {
-                                    <span id="fecharEstadia"  idkey="@item.Id" class="btn btn-sm btn-danger">
+                                    <span id="fecharEstadia" idkey="@item.Id" class="btn btn-sm btn-danger">
                                         <i class="fas fa-sack-dollar"></i>
                                     </span>
                                 }

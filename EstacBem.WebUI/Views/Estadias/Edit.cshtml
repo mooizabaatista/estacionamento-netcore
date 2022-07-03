@@ -1,0 +1,100 @@
+﻿@using EstacBem.WebUI.Extensions
+@model EstacBem.WebUI.Models.EstadiaViewModel
+
+<div class="container">
+    <div class="row">
+        <!-- Heder -->
+        <div class="col-12 mt-4">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Editar Estadia</h5>
+                </div>
+                <!-- Formulário de cadastro -->
+                <div class="card-body">
+                    <form asp-action="EditPost" asp-controller="Estadias" method="post">
+
+                        <!-- Estadia Id Hiiden -->
+                        <input type="hidden" value="@Model.Id" asp-for="Id" />
+
+                        <!-- Data hidden -->
+                        <input type="hidden" asp-for="Data" value="@DateTime.Now" />
+
+                        <!-- Veículo Id Hidden-->
+                        <input type="hidden" asp-for="VeiculoId" />
+                        <input asp-for="Veiculo.Placa" type="hidden" value="@Model.Veiculo.Placa" class="form-control text-center" />
+                        <input type="hidden" asp-for="Veiculo.Marca" class="form-control text-center" value="@Model.Veiculo.Marca" />
+                        <input type="hidden" asp-for="Veiculo.Modelo" class="form-control text-center" value="@Model.Veiculo.Modelo" />
+                        <input type="hidden" asp-for="Veiculo.Cor" class="form-control text-center" value="@Model.Veiculo.Cor" />
+                        <input type="hidden" asp-for="ValorPrimeira" class="form-control text-center" value="@Model.ValorPrimeira" />
+                        <input type="hidden" asp-for="ValorDemais" class="form-control text-center" />
+                        <input type="hidden" asp-for="Veiculo.Cliente.Nome" class="form-control text-center" value="@Model.Veiculo.Cliente.Nome" />
+
+
+
+                        <div class="row">
+                            <div class="col-4">
+                                <!-- Entrada -->
+                                <div class="form-group">
+                                    <label>Entrada</label>
+                                    <input class="form-control" asp-for="Entrada" />
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-group">
+                                    <!-- Bolsao -->
+                                    <label>Área</label>
+                                    <select class="form-control" asp-items="ViewBag.Bolsoes" asp-for="NovoIdBolsao">
+                                        <option value="">Selecione uma área...</option>
+                                    </select>
+                                    <input type="hidden" asp-for="BolsaoId" value="@Model.BolsaoId" />
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-group">
+                                    <!-- Bolsao -->
+                                    <label>Veículo</label>
+                                    <select class="form-control" asp-items="ViewBag.VeiculosCliente" asp-for="NovoIdVeiculo">
+                                        <option value="">Selecione um veículo...</option>
+                                    </select>
+                                    <input type="hidden" asp-for="VeiculoId" value="@Model.VeiculoId" />
+                                </div>
+                            </div>
+
+
+
+
+                            <!-- Açõess -->
+                            <div class="row">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <!-- Cadastrar -->
+                                    <button id="" class="btn btn-sm btn-success form-control" type="submit">
+                                        Confirmar <i class="fa fa-plus ml-2" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <!-- Cancelar -->
+                                    <a asp-action="Index" asp-controller="Estadias" class="btn btn-sm btn-dark form-control">Cancelar <i class="fa fa-arrow-left ml-2" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Coluna Auxiliar -->
+<div class="col-4"></div>
+</div>
+</div>
+
+@section Scripts{
+    <script src="~/js/Estadia/JsEstadiaCreate.js"></script>
+}

@@ -34,7 +34,8 @@ namespace EstacBem.WebUI.Controllers
         [HttpGet]
         public async Task<IActionResult> Create()
         {
-            ViewBag.Clientes = new SelectList(await _clienteService.GetAllAsync(), "Id", "Nome");
+            ViewBag.Clientes = new SelectList(await _clienteService.GetAllAsync(), "Id", "CPF");
+            ViewBag.ListaClientes = await _clienteService.GetAllAsync();
             return View();
         }
 

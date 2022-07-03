@@ -1,5 +1,6 @@
 ﻿@model EstacBem.Domain.Entities.Veiculo
 
+
 <div class="container">
     <div class="row">
         <!-- Coluna Auxiliar -->
@@ -46,9 +47,10 @@
                                 <!-- Cliente -->
                                 <div class="form-group">
                                     <label>Cliente</label>
-                                    <select asp-for="ClienteId" class="form-control my-select" asp-items="ViewBag.Clientes" data-live-search="true">
+                                    <select asp-for="ClienteId" class="js-example-basic-multiple js-states form-control selectClientes" id="id_label_multiple" multiple="multiple" asp-items="ViewBag.Clientes">
                                         <option value="">Selecione um cliente</option>
                                     </select>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -78,5 +80,8 @@
 </div>
 
 @section Scripts {
-        <script src="~/js/Veiculo/JsVeiculoCreate.js"></script>
+    <script src="~/js/Veiculo/JsVeiculoCreate.js"></script>
+    <script>
+        $('.selectClientes').select2();
+    </script>
 }

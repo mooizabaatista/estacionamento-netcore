@@ -33,7 +33,7 @@ namespace EstacBem.WebUI.Controllers
             string placaToUpper = placa.Trim().ToUpper();
 
             var veiculoEstacionado = _estadiaService.GetAllAsync().Result
-                .Where(x => x.Veiculo.Placa == placa && x.Saida == null).Count() > 0;
+                .Where(x => x.Veiculo.Placa == placaToUpper && x.Saida == null).Count() > 0;
 
             return Task.FromResult(Json(veiculoEstacionado));
         }

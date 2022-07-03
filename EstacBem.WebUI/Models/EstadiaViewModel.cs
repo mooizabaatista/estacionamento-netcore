@@ -16,9 +16,13 @@ namespace EstacBem.WebUI.Models
         //Relacionamentos
         public int BolsaoId { get; set; }
         public virtual Bolsao Bolsao { get; set; }
+        public string NomeAntigoBolsao { get; set; }
+        public int NovoIdBolsao { get; set; }
         public int VeiculoId { get; set; }
+        public int NovoIdVeiculo { get; set; }
         public virtual Veiculo Veiculo { get; set; }
         public int StatusId { get; set; }
+        public int StatusIdAntigo { get; set; }
         public virtual Status Status { get; set; }
         public string TempoTotal { get; set; }
     }

@@ -385,6 +385,7 @@ C:\Users\batis\OneDrive\Área de Trabalho\EstacBemProject\EstacBem\EstacBem.WebU
 C:\Users\batis\OneDrive\Área de Trabalho\EstacBemProject\EstacBem\EstacBem.WebUI\obj\Debug\net5.0\Razor\Views\Clientes\Index.cshtml.g.cs
 C:\Users\batis\OneDrive\Área de Trabalho\EstacBemProject\EstacBem\EstacBem.WebUI\obj\Debug\net5.0\Razor\Views\Clientes\Remove.cshtml.g.cs
 C:\Users\batis\OneDrive\Área de Trabalho\EstacBemProject\EstacBem\EstacBem.WebUI\obj\Debug\net5.0\Razor\Views\Estadias\Create.cshtml.g.cs
+C:\Users\batis\OneDrive\Área de Trabalho\EstacBemProject\EstacBem\EstacBem.WebUI\obj\Debug\net5.0\Razor\Views\Estadias\Edit.cshtml.g.cs
 C:\Users\batis\OneDrive\Área de Trabalho\EstacBemProject\EstacBem\EstacBem.WebUI\obj\Debug\net5.0\Razor\Views\Estadias\Index.cshtml.g.cs
 C:\Users\batis\OneDrive\Área de Trabalho\EstacBemProject\EstacBem\EstacBem.WebUI\obj\Debug\net5.0\Razor\Views\Estadias\Total.cshtml.g.cs
 C:\Users\batis\OneDrive\Área de Trabalho\EstacBemProject\EstacBem\EstacBem.WebUI\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs

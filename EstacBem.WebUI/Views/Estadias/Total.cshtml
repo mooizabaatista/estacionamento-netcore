@@ -50,18 +50,18 @@
 
                 <div class="form-group">
                     <div class="row">
-                        <div class="col-4 mt-3">
+                        <div class="col-8 mt-3">
                             <label>Status Pagamento</label>
                             <div class="row">
-                                <div class="col-8">
+                                <div class="col-4">
                                     <select class="form-control" asp-for="StatusId" id="statusId" asp-items="@ViewBag.Status">
                                         <option value="Pendente">Pendente</option>
                                     </select>
                                 </div>
                                 <div class="col-4">
-                                    <button type="submit" class="btn btn-success">Finalizar</button>
-
+                                    <button id="btFinalizarEstadia" type="submit" class="btn btn-success">Finalizar</button>
                                 </div>
+
                             </div>
 
                         </div>

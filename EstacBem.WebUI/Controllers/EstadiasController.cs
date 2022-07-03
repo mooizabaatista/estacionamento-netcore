@@ -141,6 +141,95 @@ namespace EstacBem.WebUI.Controllers
             }
         }
 
+        //Página Editar
+        [HttpGet]
+        public async Task<IActionResult> Edit(int id)
+        {
+            var estadia = await _estadiaService.GetByIdAsync(id);
+
+            string tempoTotalFormatado = "";
+
+            if (estadia.Saida != null)
+            {
+                TimeSpan resultadoTempoTotal = estadia.Saida.Value.Subtract(estadia.Entrada);
+                tempoTotalFormatado = $"{resultadoTempoTotal.Hours}:{resultadoTempoTotal.Minutes}";
+            }
+
+            EstadiaViewModel estadiaViewModel = new EstadiaViewModel
+            {
+                Bolsao = estadia.Bolsao,
+                BolsaoId = estadia.BolsaoId,
+                Data = estadia.Data,
+                Entrada = estadia.Entrada,
+                Id = estadia.Id,
+                Saida = estadia.Saida,
+                Status = estadia.Status,
+                StatusId = estadia.StatusId,
+                ValorDemais = estadia.ValorDemais,
+                ValorPrimeira = estadia.ValorPrimeira,
+                ValorTotal = estadia.ValorTotal,
+                Veiculo = estadia.Veiculo,
+                VeiculoId = estadia.VeiculoId,
+                TempoTotal = tempoTotalFormatado
+            };
+
+
+            ViewBag.BolsaoNomeAntigo = estadia.Bolsao.Nome;
+            ViewBag.IdAntigoBolsao = estadia.BolsaoId;
+            ViewBag.IdAntigoVeiculo = estadia.Veiculo.Id;
+
+            var cliente = _clienteService.GetAllAsync().Result.Where(x => x.Id == estadia.Veiculo.ClienteId).FirstOrDefault();
+
+            //Select Lists para os bolsões e status do pagamento da estadia
+            ViewBag.Bolsoes = new SelectList(_bolsaoService.GetAllAsync().Result, "Id", "Nome");
+            ViewBag.Status = new SelectList(_statusService.GetAllAsync().Result.Where(x => x.Tipo == "Pagamento"), "Id", "Nome");
+            ViewBag.VeiculosCliente = new SelectList(_veiculoservice.GetAllAsync().Result.Where(x => x.ClienteId == cliente.Id), "Id", "Modelo");
+
+           
+            return View(estadiaViewModel);
+        }
+
+
+        [HttpPost]
+        public async Task<IActionResult> EditPost(EstadiaViewModel estadiaViewModel)
+            {
+
+
+            var estadia = _estadiaService.GetByIdAsync(estadiaViewModel.Id).Result;
+            var bolsaoAtual = _bolsaoService.GetByIdAsync(estadiaViewModel.NovoIdBolsao).Result;
+            var bolsaoAntigo = _bolsaoService.GetByIdAsync(estadia.BolsaoId).Result;
+
+
+            if (estadiaViewModel.BolsaoId != estadiaViewModel.NovoIdBolsao)
+            {
+                bolsaoAntigo.QtdVagas++;
+
+                bolsaoAtual.QtdVagas--;
+
+                estadia.BolsaoId = estadiaViewModel.NovoIdBolsao;
+            }
+            if(estadiaViewModel.VeiculoId != estadiaViewModel.NovoIdVeiculo)
+            {
+                estadia.VeiculoId = estadiaViewModel.NovoIdVeiculo;
+            }
+
+            estadia.Entrada = estadiaViewModel.Entrada;
+
+            await _estadiaService.UpdateAsync(estadia);
+
+            try
+            {
+                await _uow.Commit();
+                return RedirectToAction("Index");
+            }
+            catch (Exception)
+            {
+                await _uow.RollBack();
+                return RedirectToAction("Index");
+            }
+        }
+
+
 
 
         //Atulizando e fazendo resumo da estadia
@@ -188,7 +277,7 @@ namespace EstacBem.WebUI.Controllers
 
             // Devolvendo a vaga para o bolsao
             var bolsaoSelecionado = _bolsaoService.GetByIdAsync(estadiaAberta.BolsaoId).Result;
-            bolsaoSelecionado.QtdVagas += 1;
+            bolsaoSelecionado.QtdVagas++;
 
             try
             {
