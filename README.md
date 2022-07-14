@@ -31,7 +31,7 @@ Funcionalidades:
 3 - Marcar o projeto EstacBem.WebUI como startup project e iniciar o projeto.
 ## Exemplo de uso
 
-Para a utilização do sistema, deve ser cadastrada uma precificacao, uma área para estacionar,
+Para a utilização do sistema, deverá ser cadastrada uma precificacao, uma área para estacionar,
 um cliente e um veículo.
 
 ## Meta
