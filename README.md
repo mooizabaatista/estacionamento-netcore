@@ -18,6 +18,8 @@ Funcionalidades:
 
 - Calculo total da estadia
 
+![estacbem](https://user-images.githubusercontent.com/73617999/179528891-89a19eb6-71aa-4127-961e-72211b67fe33.png)
+
 ## Instalação
 
 1 - Para a utilização, deverá ser alterado o arquivo "ApplicationDbContext.cs"
