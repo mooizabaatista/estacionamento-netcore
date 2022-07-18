@@ -18,7 +18,7 @@ Funcionalidades:
 
 - Calculo total da estadia
 
-![estacbem](https://user-images.githubusercontent.com/73617999/179528891-89a19eb6-71aa-4127-961e-72211b67fe33.png)
+![estacbem](https://user-images.githubusercontent.com/73617999/179529142-5d49a2a5-eb57-4d71-8563-20c2a40a93c0.png)
 
 ## Instalação
 
