@@ -44,6 +44,3 @@ um cliente e um veículo.
 
 ## Github
 [https://github.com/mooizabaatista/github-link](https://github.com/mooizabaatista/)
-
-## Portfólio 
- <a href="https://portfolio-moises.vercel.app/" target="_blank"><img src="https://img.shields.io/badge/-Portf%C3%B3lio-brown?style=for-the-badge&logo=true" target="_blank"></a>
