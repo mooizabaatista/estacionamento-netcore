@@ -26,21 +26,17 @@ Funcionalidades:
 
 > Server=<seu_servidor_aqui>;Database=MBFinance;User Id=<seu_usuario_aqui>;Password=<sua_senha_aqui>;
 
-2 - Marcar o projeto EstacBem.Infra como startup project e navegar até o painel Package Manager Console e inserir o seguinte comando: 
+2 - Criar a base de dados: 
 
 > Update-Datebase
 
-3 - Marcar o projeto EstacBem.WebUI como startup project e iniciar o projeto.
+3 - Iniciar o projeto EstacBem.WebUI
+
 ## Exemplo de uso
 
-Para a utilização do sistema, deverá ser cadastrada uma precificacao, uma área para estacionar,
-um cliente e um veículo.
+Para a utilização do sistema, deverá ser cadastrada uma precificacao e uma área para estacionar (bolsões).
 
 ## Meta
 
 <a href = "mailto:batistamz@gmail.com"><img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
   <a href="https://www.linkedin.com/in/mois%C3%A9s-batista-da-silva-8496541bb/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
- 
-
-## Github
-[https://github.com/mooizabaatista/github-link](https://github.com/mooizabaatista/)
